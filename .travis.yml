@@ -14,3 +14,4 @@ env:
 
 script:
   - gulp test --use-sauce-labs
+  - gulp test
