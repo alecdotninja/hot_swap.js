@@ -1,0 +1,32 @@
+{
+  "name": "hot_swap",
+  "version": "0.1.0",
+  "description": "An unobtrusive library for partial page replacement inspired by the defunct-before-release Turbolinks 3",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anarchocurious/hot_swap.js.git"
+  },
+  "author": "Alec Larsen <aleclarsen42@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anarchocurious/hot_swap.js/issues"
+  },
+  "homepage": "https://github.com/anarchocurious/hot_swap.js#readme",
+  "devDependencies": {
+    "expect": "^1.18.0",
+    "expect.js": "^0.3.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-uglify": "^1.5.3",
+    "mochify": "^2.17.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "sinon": "^1.17.3",
+    "yargs": "^4.6.0"
+  }
+}

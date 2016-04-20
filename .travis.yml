@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - 0.12
+
+cache:
+  directories:
+    - node_modules
+
+env:
+  global:
+    - SAUCE_USERNAME=HotSwap
+    - secure: vsaeF4SkF0npDEupEHaFC1F0uXhCiYzcSX2Jb/sQxXouIkGNLMv5bZEl2izQMRjuu/7l/Kr8ZU9bulcZcWOuQP4DvHDN7N0Ug8GfLM7suXv3fr1Oo0+o8c2OOrsCIX74txdB8YMXcSVhAwH/40BhvTCRFeZp+lOIiVfx9YLgYKakTnlr9pJfjsSGK77b6Kobmkziou5YT2/f/qVkr5nQjRi+8XhFMMgZeknd6k13Dat9RzShRveOP2MIVWJNNH4OSsGMyzq69YC6tUgchy13alSS2Zkt1p57LZKRi/Xzi/vo+rGc9t9nNZdgk1t7dtURkRxCVBpt4hp4oxM0PpwwWF27cqb8lnfSVMyx6xOt+8drwWU5B9Q7j2dnEb2BEDUC5ltpN7wWtBORW/x8t26SMJVxt2dhJ2OkRInaL3yKWFFbKBYInjHu9obSh5JPwdTtKGHleznPzds3WAdHMTZV6DMuQol3cyNZQDhxaPcvCDrWrP1t2WbqDmnSB6VEUbdkSGv5L3DdF+A6MN51ydJ9DwINPcAg/UCSMINvY29+klmzQOi/dCHNj8ZZZCH5lfk5kRB/HQvTaoa+FUB/RMxOnSPP6xLVKPdENLIbPVTPfPJCWpFUx6iNRdT5torkSGeA5VTXNKq3G6asKC+qLBpvdv4NrwcUqFPFckzbqeue9SA=
+
+script:
+  - gulp test --use-sauce-labs

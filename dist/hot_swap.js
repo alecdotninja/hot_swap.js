@@ -29,7 +29,7 @@
     replaceNode: function (currentNode, replacementNode) {
       var parentNode = currentNode.parentNode;
 
-      if (parentNode) {
+      if (parentNode !== null) {
         parentNode.insertBefore(replacementNode, currentNode);
         parentNode.removeChild(currentNode);
 
@@ -43,7 +43,7 @@
     appendChildNodes: function (targetNode, sourceNode) {
       var sourceChildNode;
 
-      while (sourceChildNode = sourceNode.firstChild) {
+      while ((sourceChildNode = sourceNode.firstChild) !== null) {
         targetNode.appendChild(sourceChildNode);
 
         this.addedNodes.push(sourceChildNode);
@@ -54,8 +54,8 @@
       var targetReferenceNode = targetNode.firstChild;
       var sourceChildNode;
 
-      if (targetReferenceNode) {
-        while (sourceChildNode = sourceNode.firstChild) {
+      if (targetReferenceNode !== null) {
+        while ((sourceChildNode = sourceNode.firstChild) !== null) {
           targetNode.insertBefore(sourceChildNode, targetReferenceNode);
 
           this.addedNodes.push(sourceChildNode);
@@ -68,7 +68,7 @@
     replaceChildNodes: function (targetNode, sourceNode) {
       var childNode;
 
-      while (childNode = targetNode.firstChild) {
+      while ((childNode = targetNode.firstChild) !== null) {
         targetNode.removeChild(childNode);
 
         this.removedNodes.push(childNode);
