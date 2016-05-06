@@ -433,9 +433,9 @@
         method: form.method,
         data: new FormData(form),
         replace: form.getAttribute('data-replace'),
-        replaceChildren: from.getAttribute('data-replace-children'),
-        appendChildren: from.getAttribute('data-append-children'),
-        prependChildren: from.getAttribute('data-prepend-children'),
+        replaceChildren: form.getAttribute('data-replace-children'),
+        appendChildren: form.getAttribute('data-append-children'),
+        prependChildren: form.getAttribute('data-prepend-children'),
         keepTitle: form.hasAttribute('data-keep-title'),
         keepPath: form.hasAttribute('data-keep-path')
       });
