@@ -89,7 +89,9 @@
           scriptElements.push(addedNode);
         }
 
-        _push.apply(scriptElements, addedNode.querySelectorAll('SCRIPT'));
+        if(addedNode.nodeType === Node.ELEMENT_NODE || addedNode.nodeType === Node.DOCUMENT_NODE) {
+          _push.apply(scriptElements, addedNode.querySelectorAll('SCRIPT'));
+        }
       }
 
       return scriptElements;
@@ -229,6 +231,11 @@
       return this._optionCache[name];
     },
 
+    setOption: function(name, value) {
+      delete this._optionCache[name];
+      this.options[name] = value;
+    },
+
     _mutationManger: null,
     _initializeMutationManger: function () {
       this._mutationManger = HotSwap.createMutationManager();
@@ -254,6 +261,10 @@
         this.request = HotSwap.createRequestForHTML(this.getOption('method'), this.getOption('url'), this.getOption('data'));
 
         this.request.addEventListener('load', function () {
+          if(this.request.responseURL) {
+            this.setOption('url', this.request.responseURL);
+          }
+
           this.replacementContent = this.request.responseText;
 
           this._notifyDocument('loaded', function () {
@@ -417,7 +428,7 @@
 
     var form = event.target || event.srcElement;
 
-    while (form && form.tagName !== 'form') {
+    while (form && form.tagName !== 'FORM') {
       form = form.parentElement;
     }
 
